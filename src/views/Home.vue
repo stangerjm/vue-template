@@ -1,18 +1,15 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Welcome to the app</h1>
+    <smart-details :detail-data="{ isEmployee: true }"></smart-details>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    SmartDetails: () => import('smart-x-vue/src/components/smart-details'),
   },
 };
 </script>
