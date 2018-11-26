@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import { transformIntoFormModel, ModelType } from 'smart-x-vue';
+import ModelType from 'smart-x-vue/src/global/constants/ModelType';
+import { transformIntoFormModel } from 'smart-x-vue';
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('registration');

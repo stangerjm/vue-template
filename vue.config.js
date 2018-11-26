@@ -1,8 +1,9 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
+const { config: appConfig } = require('./app.config');
 
 module.exports = {
-  outputDir: path.resolve(__dirname, '../wwwroot'),
+  outputDir: path.resolve(__dirname, appConfig.outputDirectory),
   configureWebpack: {
     plugins: [
       new BundleAnalyzerPlugin({
@@ -14,8 +15,8 @@ module.exports = {
   },
   devServer: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
+      [appConfig.proxy.alias]: {
+        target: appConfig.proxy.target,
       },
     },
   },

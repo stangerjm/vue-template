@@ -31,7 +31,8 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import config from '../app.config';
+
+const { config } = require('../app.config');
 
 const { mapGetters, mapActions } = createNamespacedHelpers('registration');
 const { items, title } = config.nav;

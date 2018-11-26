@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ModelType } from 'smart-x-vue';
+import ModelType from 'smart-x-vue/src/global/constants/ModelType';
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapActions } = createNamespacedHelpers('registration');

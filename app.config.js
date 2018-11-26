@@ -1,4 +1,4 @@
-export default {
+module.exports.config = {
   proxy: {
     target: 'http://localhost:5000',
     alias: '/api',
