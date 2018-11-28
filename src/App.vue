@@ -32,10 +32,10 @@
 <script>
 import { createNamespacedHelpers } from 'vuex';
 
-const { config } = require('../app.config');
+import config from '../app.config';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('registration');
-const { items, title } = config.nav;
+const { navItems, appTitle } = config;
 
 export default {
   name: 'app',
@@ -47,10 +47,10 @@ export default {
   computed: {
     ...mapGetters(['isLoggedIn', 'getUserName']),
     nav() {
-      return this.isLoggedIn ? [...items] : [];
+      return this.isLoggedIn ? [...navItems] : [];
     },
     title() {
-      return title;
+      return appTitle;
     },
     user() {
       return this.getUserName;

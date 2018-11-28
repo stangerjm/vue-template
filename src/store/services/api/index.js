@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const { config } = require('../../../../app.config');
+import config from '../../../../app.config';
 
 const {
   proxy: {

@@ -1,9 +1,12 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
-const { config: appConfig } = require('./app.config');
+const appConfig = require('./app.config');
+
+process.env.VUE_APP_TITLE = appConfig.appTitle;
 
 module.exports = {
-  outputDir: path.resolve(__dirname, appConfig.outputDirectory),
+  outputDir: path.resolve(__dirname, appConfig.buildDirectory),
+  // outputDir: path.resolve(__dirname, '../wwwroot'),
   configureWebpack: {
     plugins: [
       new BundleAnalyzerPlugin({
@@ -19,6 +22,11 @@ module.exports = {
         target: appConfig.proxy.target,
       },
     },
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:5000',
+    //   },
+    // },
   },
   chainWebpack: (config) => {
     // use vue compiler
